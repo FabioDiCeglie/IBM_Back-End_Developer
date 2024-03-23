@@ -16,13 +16,12 @@ spec:
         image: us.icr.io/<my_namespace>/hello-world:1
         ports:
         - containerPort: 8080
+          name: http
         resources:
           limits:
-            cpu: 2m
-            memory: 30Mi
+            cpu: 50m
           requests:
-            cpu: 1m
-            memory: 10Mi  
+            cpu: 20m
         
       imagePullSecrets:
         - name: icr
