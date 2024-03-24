@@ -21,3 +21,6 @@ EXPOSE 3000
 
 # docker build . -t us.icr.io/sn-labs-dcfabio96/guestbook:v1
 # docker push us.icr.io/sn-labs-dcfabio96/guestbook:v1
+
+# REBUILD IMAGE
+# docker build . -t us.icr.io/sn-labs-dcfabio96/guestbook:v1 && docker push us.icr.io/sn-labs-dcfabio96/guestbook:v1
