@@ -15,3 +15,7 @@ It is the testing and evaluation of an application during runtime. Also referred
 Dynamic application security testing (DAST) looks at the application from the outside-in — by simulating attacks against a web application and analyzing the application's responses to discover security vulnerabilities in the application.
 
 Ex: OWASP ZAP ( https://owasp-juice.shop )
+
+## Software Composition Analysis
+
+Software Composition Analysis (SCA) is the process of identifying areas of risk that result from the use of third-party and open-source components during application development.
