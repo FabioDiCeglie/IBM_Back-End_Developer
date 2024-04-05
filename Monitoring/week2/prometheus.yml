@@ -28,3 +28,7 @@ scrape_configs:
 # bitnami/prometheus:latest
 
 # docker restart prometheus
+
+# Lunch Grafana 
+
+# docker run --name=grafana -dp 3000:3000 --network monitor  grafana/grafana
