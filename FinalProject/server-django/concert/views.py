@@ -65,8 +65,22 @@ def logout_view(request):
     return HttpResponseRedirect(reverse("login"))
 
 def concerts(request):
-    pass
-
+    if request.user.is_authenticated:
+        lst_of_concert = []
+        concert_objects = Concert.objects.all()
+        for item in concert_objects:
+            try:
+                status = item.attendee.filter(
+                    user=request.user).first().attending
+            except:
+                status = "-"
+            lst_of_concert.append({
+                "concert": item,
+                "status": status
+            })
+        return render(request, 'concerts.html', {"concerts": lst_of_concert} )
+    else:
+        return HttpResponseRedirect(reverse("login"))
 
 def concert_detail(request, id):
     if request.user.is_authenticated:
@@ -78,8 +92,6 @@ def concert_detail(request, id):
         return render(request, "concert_detail.html", {"concert_details": obj, "status": status, "attending_choices": ConcertAttending.AttendingChoices.choices})
     else:
         return HttpResponseRedirect(reverse("login"))
-    pass
-
 
 def concert_attendee(request):
     if request.user.is_authenticated:
